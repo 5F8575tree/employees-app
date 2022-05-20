@@ -37,3 +37,18 @@
 - Show Polls Buttons (dashboard on Poll Cards)
 - Poll Response (On Poll Questions)
 - Create a Poll Input Form
+
+# State
+
+- Everything in the store, except:
+  - Input Fields in login component and create poll component
+
+# Next Steps
+
+- HTML/CSS
+- Actions / Reducers
+- Configure Middleware
+- Initialize Data
+- Build Dashboard View
+- Builld Poll View
+- Assess and Plan Next Steps
