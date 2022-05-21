@@ -52,3 +52,57 @@
 - Build Dashboard View
 - Builld Poll View
 - Assess and Plan Next Steps
+
+# HTML/CSS
+
+I like to have at least something to render to get me started.
+
+index.js:
+
+    import React from "react";
+    import { createRoot } from "react-dom/client";
+    import App from "./components/App";
+
+    const container = document.getElementById("root");
+    const root = createRoot(container);
+    root.render(<App tab="Home" />);
+
+App.js:
+
+    import React from "react";
+
+    const App = () => {
+      return (
+        <div className="App">
+          <h3>Hello from App.js</h3>
+        </div>
+      );
+    };
+
+    export default App;
+
+# Next Build a Homepage Component
+
+- LoginPage Component
+  - Title/Logo/Subtitle Component (perhaps call it 'Hero' component)
+  - Login Form Component
+
+We want to align everything centrally for this app:
+
+    //index.css
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+![Login Initial Styling](images/login-view.jpg)
