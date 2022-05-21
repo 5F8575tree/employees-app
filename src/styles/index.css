@@ -12,7 +12,16 @@ code {
     monospace;
 }
 
-img {
+/* General */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* Log In Page */
+.hero-img {
   max-width: 30%;
   max-height: 30%;
   align-self: center;
@@ -30,4 +39,84 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  background-color: rgb(221, 231, 231);
+  padding: 10px 10%;
+}
+
+.navbar-items {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+button {
+  background-color: rgb(244, 248, 248);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Polls */
+.polls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.poll-header {
+  padding: 10px;
+  margin: 10px;
+}
+
+.new-poll {
+  padding: 20px;
+  width: 80%;
+  min-height: 30vh;
+  border: 1px solid #332e2e;
+  border-radius: 5px;
+}
+
+.completed-polls {
+  padding: 20px;
+  width: 80%;
+  min-height: 30vh;
+  border: 1px solid #332e2e;
+  border-radius: 5px;
+}
+
+.poll-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Cards */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  min-width: 20vw;
+  border: 1px solid #332e2e;
+  border-radius: 5px;
 }

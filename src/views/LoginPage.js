@@ -1,6 +1,6 @@
 import React from "react";
-import Hero from "./Hero";
-import LoginForm from "./LoginForm";
+import Hero from "../components/Hero";
+import LoginForm from "../components/LoginForm";
 
 const LoginPage = () => {
   return (

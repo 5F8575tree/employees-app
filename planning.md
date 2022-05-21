@@ -91,7 +91,7 @@ We want to align everything centrally for this app:
 
     //index.css
 
-    .hero {
+    .center {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -106,3 +106,78 @@ We want to align everything centrally for this app:
     }
 
 ![Login Initial Styling](images/login-view.jpg)
+
+# Create a src/views folder, move the LoginPage view to it, and then create each view one by one
+
+- Dashboard
+- Poll Page
+- Create Poll Page
+- Leaderboard
+
+Quick creation of Dashboard.js view:
+
+    import React from "react";
+
+    const Dashboard = () => {
+      return (
+        <div>
+          <h1>Dashboard</h1>
+        </div>
+      );
+    };
+
+    export default Dashboard;
+
+Now set up **Routes, Route and Router**.
+
+    //index.js
+
+    import { BrowserRouter as Router } from "react-router-dom";
+
+    root.render(
+      <Router>
+        <App />
+      </Router>
+    );
+
+And in App.js:
+
+    import { Routes, Route } from "react-router-dom";
+
+    const App = () => {
+      return (
+        <div>
+          <Routes>
+            <Route path="/" exact element={<LoginPage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </div>
+      );
+    };
+
+Then set up **Link and Link to=""**.
+
+    //LoginForm.js
+
+    import { Link } from "react-router-dom";
+
+    <Link to="/dashboard">
+      <button className="btn" type="submit">
+          Login
+      </button>
+    </Link>
+
+And update our App.js:
+
+    const App = () => {
+      return (
+        <div>
+          <Routes>
+            <Route path="/" exact element={<LoginPage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </div>
+      );
+    }
+
+# Build out the Dashboard Page
