@@ -150,6 +150,9 @@ And in App.js:
           <Routes>
             <Route path="/" exact element={<LoginPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/poll-page" element={<PollPage />} />
+            <Route path="/create-poll" element={<CreatePoll />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
           </Routes>
         </div>
       );
@@ -180,4 +183,18 @@ And update our App.js:
       );
     }
 
-# Build out the Dashboard Page
+# Build out the Pages with very basic html/CSS and Link them all up
+
+**Dashboard:**
+
+![Dashboard](images/poll-page-html.jpg)
+
+**Create Poll Page:**
+![Create Poll Page](images/create-poll.jpg)
+
+**Answer Poll Page:**
+![Answer Poll Page](images/answer-poll.jpg)
+
+**Leaderboard:**
+
+![Leaderboard](images/leaderboard-html.jpg)

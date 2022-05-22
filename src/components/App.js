@@ -15,7 +15,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/poll-page" element={<PollPage />} />
         <Route path="/create-poll" element={<CreatePoll />} />
-        <Route path="/Leaderboard" element={<Leaderboard />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </div>
   );

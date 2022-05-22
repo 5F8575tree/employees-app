@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import LeaderboardComp from "../components/Leaderboard";
 
 const Leaderboard = () => {
   return (
     <div className="header">
       <Navbar />
-      <h2>This will be the Leaderboard Page</h2>
+      <LeaderboardComp />
     </div>
   );
 };
