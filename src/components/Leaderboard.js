@@ -4,6 +4,11 @@ import { useSelector } from "react-redux";
 const LeaderboardComp = () => {
   const { users } = useSelector((state) => state.users);
 
+  //we need a function that calculates the number of objects in an object
+  const count = (obj) => {
+    return Object.keys(obj).length;
+  };
+
   return (
     <div className="leaderboard-container">
       <div className="header">
@@ -19,9 +24,33 @@ const LeaderboardComp = () => {
         </div>
         <div className="users-container">
           <h2 className="user-answers">Answers</h2>
+          <div className="user">
+            {count(users[Object.keys(users)[0]].answers)}
+          </div>
+          <div className="user">
+            {count(users[Object.keys(users)[1]].answers)}
+          </div>
+          <div className="user">
+            {count(users[Object.keys(users)[2]].answers)}
+          </div>
+          <div className="user">
+            {count(users[Object.keys(users)[3]].answers)}
+          </div>
         </div>
         <div className="users-container">
           <h2 className="user-created">Created</h2>
+          <div className="user">
+            {count(users[Object.keys(users)[0]].questions)}
+          </div>
+          <div className="user">
+            {count(users[Object.keys(users)[1]].questions)}
+          </div>
+          <div className="user">
+            {count(users[Object.keys(users)[2]].questions)}
+          </div>
+          <div className="user">
+            {count(users[Object.keys(users)[3]].questions)}
+          </div>
         </div>
       </div>
     </div>
