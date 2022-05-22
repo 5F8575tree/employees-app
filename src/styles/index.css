@@ -220,3 +220,13 @@ button {
   width: 30vw;
   height: 50vh;
 }
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(73, 65, 65);
+  border-radius: 5px;
+  width: 20vw;
+  height: 5vh;
+}

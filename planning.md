@@ -198,3 +198,67 @@ And update our App.js:
 **Leaderboard:**
 
 ![Leaderboard](images/leaderboard-html.jpg)
+
+# Actions / Reducers
+
+Required Actions / Reducers:
+
+- Set Authed User
+- Poll
+  - Create(Add)
+  - Toggle(Answer A or B)
+  - Receive(Get)
+- Users
+  - Receive(Get)
+- Shared
+
+With Redux Toolkit the combined action/reducer looks like this:
+
+    import { createSlice } from "@reduxjs/toolkit";
+
+    export const counterSlice = createSlice({
+      name: "counter",
+      initialState: {
+        count: 0,
+      },
+      reducers: {
+        increment: (state) => {
+          state.count += 1;
+        },
+        decrease: (state) => {
+          state.count -= 1;
+        },
+      },
+    });
+
+    // each case under reducers becomes an action creator
+    export const { increment, decrease } = counterSlice.actions;
+
+    export default counterSlice.reducer;
+
+But before this, we can now use **Provider** and connect our App to the store:
+
+    // index.js
+
+    import { store } from "./store";
+
+    root.render(
+      <React.StrictMode>
+        <Router>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </Router>
+      </React.StrictMode>
+    );
+
+And you store.js file should read:
+
+    import { configureStore } from "@reduxjs/toolkit";
+    import myReducer from "./reducers/mySlice";
+
+    export const store = configureStore({
+      reducer: {
+        myCounter: myReducer,
+      },
+    });
