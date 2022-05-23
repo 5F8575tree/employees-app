@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getInitialData } from "../api";
+import { getInitialData } from "../utils/api";
 
 export function handleInitialData() {
   return (dispatch) => {
