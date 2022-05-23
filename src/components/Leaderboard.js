@@ -1,16 +1,16 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { receiveUsers } from "../features/usersSlice";
+import { fetchUsers, getUsers } from "../features/usersSlice";
 
 const LeaderboardComp = () => {
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.users);
-  console.log(users);
+  const users = useSelector(getUsers);
 
   useEffect(() => {
-    dispatch(receiveUsers());
-  }, []);
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
+  console.log(users);
 
   //we need a function that calculates the number of objects in an object
   // const count = (obj) => {
@@ -25,7 +25,7 @@ const LeaderboardComp = () => {
       <div className="results-container">
         <div className="users-container">
           <h2 className="user-name">User Ranking</h2>
-          <div className="user-name">{users[Object.keys(users)[0]].name}</div>
+          <div className="user-name"></div>
         </div>
       </div>
       <div className="users-container">
