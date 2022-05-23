@@ -1,19 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getInitialData } from "../utils/api";
-
-export function handleInitialData() {
-  return (dispatch) => {
-    return getInitialData().then((data) => {
-      dispatch(receiveUsers(data.users));
-    });
-  };
-}
 
 const usersSlice = createSlice({
   name: "users",
-  initialState: {
-    users: {},
-  },
+  initialState: {},
   reducers: {
     receiveUsers: (state, action) => {
       state.users = action.payload;
