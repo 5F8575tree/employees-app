@@ -1,17 +1,6 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchUsers, getUsers } from "../features/usersSlice";
+import React from "react";
 
 const LeaderboardComp = () => {
-  const dispatch = useDispatch();
-  const users = useSelector(getUsers);
-
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
-
-  console.log(users);
-
   //we need a function that calculates the number of objects in an object
   // const count = (obj) => {
   //   return Object.keys(obj).length;
