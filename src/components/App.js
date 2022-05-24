@@ -1,21 +1,30 @@
 import React, { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import LoginPage from "../views/LoginPage";
 import Dashboard from "../views/Dashboard";
 import PollPage from "../views/PollPage";
 import CreatePoll from "../views/CreatePoll";
 import Leaderboard from "../views/Leaderboard";
 import "../styles/index.css";
-import { connect } from "react-redux";
-import { handleInitialData } from "../redux/actions/shared";
+import { useDispatch } from "react-redux";
+import { getInitialData } from "../utils/api";
+import { receiveUsers } from "../features/users";
+import { receiveQuestions } from "../features/questions";
 
-const App = (props) => {
+const App = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
-    props.dispatch(handleInitialData());
+    const fetchData = async () => {
+      const data = await getInitialData();
+      console.log(data);
+      dispatch(receiveUsers(data.users));
+      dispatch(receiveQuestions(data.questions));
+    };
+    fetchData();
   }, []);
 
   return (
-    <div>
+    <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -23,8 +32,8 @@ const App = (props) => {
         <Route path="/create-poll" element={<CreatePoll />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 };
 
-export default connect()(App);
+export default App;

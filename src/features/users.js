@@ -2,24 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const initialState = {
   users: [],
-  questions: [],
-  loading: false,
-  error: null,
 };
 
 const userSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    getUsersStart: (state) => {
-      state.loading = true;
-    },
-  },
-  extraReducers: {
-    [getUsers.pending]: (state, action) => {
-      state.loading = true;
+    receiveUsers: (state, action) => {
+      console.log(action.payload);
+      state.users = action.payload;
     },
   },
 });
+
+export const { receiveUsers } = userSlice.actions;
 
 export default userSlice.reducer;
