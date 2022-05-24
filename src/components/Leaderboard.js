@@ -1,11 +1,6 @@
 import React from "react";
 
-const LeaderboardComp = () => {
-  //we need a function that calculates the number of objects in an object
-  // const count = (obj) => {
-  //   return Object.keys(obj).length;
-  // };
-
+const LeaderboardComp = (props) => {
   return (
     <div className="leaderboard-container">
       <div className="header">
