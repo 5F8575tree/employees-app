@@ -4,7 +4,7 @@ export let users = {
     password: "password123",
     name: "Sarah Edo",
     avatarURL:
-      "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_960_720.png",
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
       "6ni6ok3ym7mf1p33lnez": "optionOne",
@@ -18,7 +18,7 @@ export let users = {
     password: "abc321",
     name: "Tyler McGinnis",
     avatarURL:
-      "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "https://cdn.pixabay.com/photo/2022/05/16/06/54/woman-7199635_960_720.png",
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
       xj352vofupe1dqz9emx13r: "optionTwo",
@@ -30,7 +30,7 @@ export let users = {
     password: "xyz123",
     name: "Mike Tsamis",
     avatarURL:
-      "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "https://cdn.pixabay.com/photo/2022/04/24/08/54/alien-7153198_960_720.png",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
       vthrdm985a262al8qx3do: "optionTwo",
@@ -43,7 +43,7 @@ export let users = {
     password: "pass246",
     name: "Zenobia Oshikanlu",
     avatarURL:
-      "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "https://cdn.pixabay.com/photo/2021/05/10/08/00/woman-6242836_960_720.png",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
     },

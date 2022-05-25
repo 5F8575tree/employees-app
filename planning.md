@@ -278,4 +278,24 @@ Our App.js component can dispatch our features as follows:
 
 Currently, we have just 'hooked up' the data with the features, components, store, and app. Index.js brings it all together. This initial rendering isn't pretty, but it allows us to now move on and build the UI properly:
 
-![Initial Rendering of Data to LEaderboard Component](images/leaderboard-data-init.jpg)
+![Initial Rendering of Data to Leaderboard Component](images/leaderboard-data-init.jpg)
+
+# Go Through Each View and Perfect the Rendering of the Information
+
+Make a list of the views and go through one-by-one with the idea of making the data render properly depending on what you expect each view to perform. For example, for the Leaderboard component, we don't want to simply list out the users with their answer, but we want to show the ranking order, which will change depending on the calculation of the user's questions and answers combined.
+
+- **Leaderboard** (reflects the ranking, in order, based on total questions created + questions answered)
+- **Dashboard** (shows cards that are separated between completed or not completed depending on whether the authedUser has answered them yet)
+  - The cards themselves show the user who created the question, their avatar, and a timestamp
+  - The card also contains a button to leader the user to answer the question
+- **Poll Page**
+- **Create Poll**
+- **Login Page / Homepage**
+
+## Leaderboard
+
+Ranking functionality should now work, and you should have made a fair idea of how the styling will work (if you plan on working on the styling later).
+
+![Leaderboard with Functionality](images/leader-functionality.jpg)
+
+## Dashboard
