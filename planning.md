@@ -294,8 +294,16 @@ Make a list of the views and go through one-by-one with the idea of making the d
 
 ## Leaderboard
 
-Ranking functionality should now work, and you should have made a fair idea of how the styling will work (if you plan on working on the styling later).
+Ranking functionality should now work, and you should have made a fair idea of how the styling will work (Note in the screenshot below that the combined answers and questions leads to a ranking from highest to lowest).
 
 ![Leaderboard with Functionality](images/leader-functionality.jpg)
 
-## Dashboard
+## Dashboard: Not-Yet-Completed Questions Cards
+
+It is easier to access the questions cards, so we have started with that. Basically we need to pull in both the users data and the questions data so that we can apply the avatar from the users data and render it along with the questions data we are rendering (author and timestamp). We also brought in the timestamp helper function to make the timestamp more readable. Again, just some very basic styling.
+
+![New Questions Cards](images/completed-cards.jpg)
+
+## Dashboard: Completed Questions Cards
+
+Now we need to focus on setting up ourselves as an authedUser, so that we can view the experience as though we are logged in and therefore see the states of questions whether they have been completed by the authedUser or not.
