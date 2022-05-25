@@ -272,4 +272,6 @@ Finally, we can start to build the data into our components. For example, to sim
 
 Our App.js component can dispatch our features as follows:
 
-![App.js](images/app-rtk.jpg)
+![App.js](images/app-rendering-dispatch.jpg)
+
+# Get the Correct Information to Render in the Appropriate Components
