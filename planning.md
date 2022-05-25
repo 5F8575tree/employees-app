@@ -199,7 +199,7 @@ And update our App.js:
 
 ![Leaderboard](images/leaderboard-html.jpg)
 
-# Actions / Reducers
+# Features (Actions / Reducers)
 
 Required Actions / Reducers:
 
@@ -212,31 +212,30 @@ Required Actions / Reducers:
   - Receive(Get)
 - Shared
 
-With Redux Toolkit the combined action/reducer looks like this:
+With Redux Toolkit the combined action/reducer can be placed in a 'features' directory. It becomes its own slice, and "actions" are exported to be used in components. For our users slice, we have this:
 
     import { createSlice } from "@reduxjs/toolkit";
 
-    export const counterSlice = createSlice({
-      name: "counter",
-      initialState: {
-        count: 0,
-      },
+    export const initialState = {
+      users: [],
+    };
+
+    const userSlice = createSlice({
+      name: "users",
+      initialState,
       reducers: {
-        increment: (state) => {
-          state.count += 1;
-        },
-        decrease: (state) => {
-          state.count -= 1;
+        receiveUsers: (state, action) => {
+          console.log(action.payload);
+          state.users = action.payload;
         },
       },
     });
 
-    // each case under reducers becomes an action creator
-    export const { increment, decrease } = counterSlice.actions;
+    export const { receiveUsers } = userSlice.actions;
 
-    export default counterSlice.reducer;
+    export default userSlice.reducer;
 
-But before this, we can now use **Provider** and connect our App to the store:
+We can now use **Provider** and connect our App to the store:
 
     // index.js
 
@@ -252,13 +251,25 @@ But before this, we can now use **Provider** and connect our App to the store:
       </React.StrictMode>
     );
 
-And you store.js file should read:
+We can also now create an 'app' directory and build a file called store.js that imports all our features (reducers) and acts as the root reducer:
 
     import { configureStore } from "@reduxjs/toolkit";
-    import myReducer from "./reducers/mySlice";
+    import userReducer from "../features/users";
+    import authedUserReducer from "../features/authedUser";
+    import questionReducer from "../features/questions";
 
     export const store = configureStore({
       reducer: {
-        myCounter: myReducer,
+        users: userReducer,
+        authedUser: authedUserReducer,
+        questions: questionReducer,
       },
     });
+
+Finally, we can start to build the data into our components. For example, to simply grab the users and place them into our Leaderboard component:
+
+![Leaderboard](images/leaderboard-rendering-rtk.jpg)
+
+Our App.js component can dispatch our features as follows:
+
+![App.js](images/app-rtk.jpg)
