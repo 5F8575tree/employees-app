@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 const LeaderboardComp = (props) => {
   const users = useSelector((state) => state.users.users);
   console.log(users);
+
   return (
     <div className="leaderboard-container">
       <div className="header">
@@ -11,21 +12,36 @@ const LeaderboardComp = (props) => {
       </div>
       <div className="results-container">
         <div className="users-container">
-          <h2 className="user-name">User Ranking</h2>
+          <h2 className="leaderboard-title">User Ranking</h2>
           <div className="user-name">
             {Object.keys(users).map((user) => (
-              <div className="user-container">
-                <div className="user-name">{user}</div>
+              <div className="user" key={user}>
+                {Object.keys(users).indexOf(user) + 1}. {users[user].name}
               </div>
             ))}
           </div>
         </div>
-      </div>
-      <div className="users-container">
-        <h2 className="user-answers">Answers</h2>
-      </div>
-      <div className="users-container">
-        <h2 className="user-created">Created</h2>
+        <div className="users-container">
+          <h2>Questions</h2>
+          <div className="user-answers">
+            {Object.keys(users).map((user) => (
+              <div className="user" key={user}>
+                {users[user].name} created: {users[user].questions.length}{" "}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="users-container">
+          <h2>Answers</h2>
+          <div className="user-answers">
+            {Object.keys(users).map((user) => (
+              <div className="user" key={user}>
+                {users[user].name} answered:{" "}
+                {Object.keys(users[user].answers).length}{" "}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
