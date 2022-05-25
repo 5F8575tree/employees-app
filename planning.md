@@ -275,3 +275,7 @@ Our App.js component can dispatch our features as follows:
 ![App.js](images/app-rendering-dispatch.jpg)
 
 # Get the Correct Information to Render in the Appropriate Components
+
+Currently, we have just 'hooked up' the data with the features, components, store, and app. Index.js brings it all together. This initial rendering isn't pretty, but it allows us to now move on and build the UI properly:
+
+![Initial Rendering of Data to LEaderboard Component](images/leaderboard-data-init.jpg)
