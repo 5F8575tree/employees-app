@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const authedUser = useSelector((state) => state.authedUser);
+  const users = useSelector((state) => state.users);
+  console.log(authedUser);
+
   return (
     <nav>
       <div className="nav-left">
@@ -22,11 +27,7 @@ const Navbar = () => {
       <div className="nav-right">
         <ul className="navbar-items">
           <li className="nav-item-right">
-            <img
-              className="nav-avatar"
-              src="https://avatars0.githubusercontent.com/u/52709824?s=460&u=f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d&v=4"
-              alt="user avatar"
-            />
+            <img className="nav-avatar" alt="user avatar" />
           </li>
           <li className="nav-item-right">
             <Link to="/">

@@ -1,28 +1,60 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setAuthedUser } from "../features/authedUser";
 
 const LoginForm = () => {
+  //we need to create a form that will dispatch the authedUser action
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const authedUser = useSelector((state) => state.authedUser);
-  console.log(authedUser);
 
-  //we need a handle submit function that sets the authedUser state
-  //and redirects to the dashboard
+  const handleChange = (e) => {
+    e.preventDefault();
+    const user = e.target.value;
+    //we need to dispatch the action if the input matches a user
+    if (
+      user === "tylermcginnis" ||
+      user === "sarahedo" ||
+      user === "zoshikanlu" ||
+      user === "mtsamis"
+    ) {
+      dispatch(setAuthedUser(user));
+    } else {
+      dispatch(setAuthedUser(null));
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("authedUser: " + authedUser);
+    //if the authedUser is null, prompt with alert
+    console.log("After dispatch: ", authedUser);
+    navigate("/dashboard");
   };
 
   return (
-    <div className="center">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        {/* <Link to="/dashboard"> */}
-        <button className="btn" type="submit">
+    <div className="login-form">
+      <h2>Login</h2>
+      <form>
+        <div className="form-group">
+          <label htmlFor="username">
+            tylermcginnis / mtsamis / sarahedo / zoshikanlu{" "}
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="username"
+            placeholder="Enter username"
+            onChange={handleChange}
+          />
+        </div>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={handleSubmit}
+        >
           Login
         </button>
-        {/* </Link> */}
       </form>
     </div>
   );
