@@ -6,7 +6,6 @@ import { formatDate } from "../utils/helpers";
 const Card = () => {
   const questions = useSelector((state) => state.questions.questions);
   const users = useSelector((state) => state.users.users);
-  console.log(questions);
 
   return (
     <div className="card-container">

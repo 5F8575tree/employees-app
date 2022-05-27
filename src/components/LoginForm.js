@@ -8,6 +8,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const authedUser = useSelector((state) => state.authedUser);
+  const users = useSelector((state) => state.users);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -29,6 +30,7 @@ const LoginForm = () => {
     e.preventDefault();
     //if the authedUser is null, prompt with alert
     console.log("After dispatch: ", authedUser);
+    console.log("After dispatch users: ", users);
     navigate("/dashboard");
   };
 
