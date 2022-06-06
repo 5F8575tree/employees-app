@@ -2,35 +2,9 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { useSelector } from "react-redux";
 
-const Navbar = (props) => {
+const Navbar = () => {
   const authedUser = useSelector((state) => state.authedUser.authedUser);
   const users = useSelector((state) => state.users.users);
-
-  const keys = Object.keys(users).map((user) => {
-    return {
-      name: users[user].name,
-      avatarURL: users[user].avatarURL,
-      id: user,
-    };
-  });
-
-  //set the avatarURL to reflect the logged in user
-  const naming = keys.map((user) => {
-    return user.id;
-  });
-  const stringNaming = naming.toString();
-  const authedUserName = authedUser.toString();
-  const authedUserMatch = stringNaming.match(authedUserName);
-  const avatarURL = keys.map((user) => {
-    if (authedUserMatch[0] === user.id) {
-      return { url: user.avatarURL };
-    } else {
-      return null;
-    }
-  });
-  const avatarURLMatch = avatarURL.filter((url) => {
-    return url !== null;
-  });
 
   return (
     <nav>
@@ -55,8 +29,9 @@ const Navbar = (props) => {
           <li className="nav-item-right">
             <img
               className="nav-avatar"
-              src={avatarURLMatch[0].url}
               alt="user avatar"
+              //show only the avatar of the autherUser (basically easy way to connect user data to the authedUser data)
+              src={users[authedUser].avatarURL}
             />
           </li>
           <li className="nav-item-right">
