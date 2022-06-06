@@ -13,6 +13,8 @@ const Polls = () => {
       <div className="new-poll">
         <ul className="new-poll-list">
           <div className="card-container">
+            //TODO: Filter the questions object with the condition and then map
+            over it to avoid not returning a value
             {Object.keys(questions).map((question) => {
               if (!users[authedUser].answers[question]) {
                 return (
@@ -32,6 +34,8 @@ const Polls = () => {
       <div className="answered-poll">
         <ul className="answered-poll-list">
           <div className="card-container">
+            //TODO: Filter the questions object with the condition and then map
+            over it to avoid not returning a value
             {Object.keys(questions).map((question) => {
               if (users[authedUser].answers[question]) {
                 return (
