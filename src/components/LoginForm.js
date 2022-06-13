@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { setAuthedUser } from "../features/authedUser";
 
 const LoginForm = () => {
-  //we need to allow the user to select a user to login as from a dropdown, then set that user as the authed user and dispatch the action, then navigate to the dashboard
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userList = useSelector((state) => state.users.users);

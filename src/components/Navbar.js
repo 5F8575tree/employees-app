@@ -31,7 +31,7 @@ const Navbar = () => {
               className="nav-avatar"
               alt="user avatar"
               //show only the avatar of the autherUser (basically easy way to connect user data to the authedUser data)
-              src={users[authedUser].avatarURL}
+              src={users[authedUser]?.avatarURL}
             />
           </li>
           <li className="nav-item-right">

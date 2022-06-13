@@ -15,7 +15,7 @@ const Polls = () => {
           <div className="card-container">
             {/* TODO: Filter the questions object with the condition and then map over it to avoid not returning a value */}
             {Object.keys(questions).map((question) => {
-              if (!users[authedUser].answers[question]) {
+              if (!users[authedUser]?.answers[question]) {
                 return (
                   <Card
                     image={users[questions[question].author].avatarURL}
@@ -35,7 +35,7 @@ const Polls = () => {
           <div className="card-container">
             {/* TODO: Filter the questions object with the condition and then map over it to avoid not returning a value */}
             {Object.keys(questions).map((question) => {
-              if (users[authedUser].answers[question]) {
+              if (users[authedUser]?.answers[question]) {
                 return (
                   <Card
                     image={users[questions[question].author].avatarURL}
