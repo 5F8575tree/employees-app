@@ -8,9 +8,9 @@ const Polls = () => {
   const users = useSelector((state) => state.users.users);
 
   return (
-    <div className="polls">
-      <h2 className="poll-header">New Questions</h2>
-      <div className="new-poll">
+    <div className="dashboard" id="dashboard">
+      <div className="new-polls">
+        <h2 className="polls-header">New Questions</h2>
         <ul className="new-poll-list">
           <div className="card-container">
             {/* TODO: Filter the questions object with the condition and then map over it to avoid not returning a value */}
@@ -29,8 +29,8 @@ const Polls = () => {
           </div>
         </ul>
       </div>
-      <h2 className="poll-header">Answered Questions</h2>
-      <div className="answered-poll">
+      <div className="completed-polls">
+        <h2 className="polls-header">Answered Questions</h2>
         <ul className="answered-poll-list">
           <div className="card-container">
             {/* TODO: Filter the questions object with the condition and then map over it to avoid not returning a value */}

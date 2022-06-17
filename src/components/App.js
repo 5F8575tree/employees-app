@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { getInitialData } from "../utils/api";
 import { receiveUsers } from "../features/users";
 import { receiveQuestions } from "../features/questions";
+import { setAuthedUser } from "../features/authedUser";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,12 @@ const App = () => {
       dispatch(receiveQuestions(data.questions));
     };
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (localStorage.getItem("authedUser")) {
+      dispatch(setAuthedUser(localStorage.getItem("authedUser")));
+    }
   }, []);
 
   return (
