@@ -35,14 +35,14 @@ const LeaderboardComp = (props) => {
                 alt={user.name}
               />
               <h3 className="leaderboard-username">{user.name}</h3>
-              <div className="user-scores">
+              <button className="user-scores">
                 <div className="leaderboard-answers">
                   <h5> ANSWERS: {user.answers}</h5>
                 </div>
                 <div className="leaderboard-questions">
                   <h5> QUESTIONS: {user.questions}</h5>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
         ))}

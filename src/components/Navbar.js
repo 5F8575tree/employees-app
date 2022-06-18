@@ -18,7 +18,7 @@ const Navbar = () => {
         <img src={logo} />
         <ul className="navbar-items">
           <li>
-            <Link to="/">
+            <Link to="/dashboard">
               <p className="nav-link">Home</p>
             </Link>
           </li>

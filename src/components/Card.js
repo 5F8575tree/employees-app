@@ -11,7 +11,7 @@ const Card = ({ image, date, author }) => {
         <h4 className="poll-timestamp">{formatDate(date)}</h4>
         <div className="card-btn">
           <Link to="/poll-page">
-            <button className="poll-btn">Answer This Poll</button>
+            <button className="poll-btn">View Poll</button>
           </Link>
         </div>
       </div>
