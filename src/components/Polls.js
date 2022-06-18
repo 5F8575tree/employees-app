@@ -21,7 +21,8 @@ const Polls = () => {
                     image={users[questions[question].author].avatarURL}
                     date={questions[question].timestamp}
                     author={questions[question].author}
-                    key={question}
+                    id={questions[question].id}
+                    key={questions[question].id}
                   />
                 );
               }
@@ -41,7 +42,8 @@ const Polls = () => {
                     image={users[questions[question].author].avatarURL}
                     date={questions[question].timestamp}
                     author={questions[question].author}
-                    key={question}
+                    id={questions[question].id}
+                    key={questions[question].id}
                   />
                 );
               }

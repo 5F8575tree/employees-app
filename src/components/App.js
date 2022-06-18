@@ -35,7 +35,7 @@ const App = () => {
       <Routes>
         <Route path="/" exact element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/poll-page" element={<PollPage />} />
+        <Route path="/questions/:id" element={<PollPage />} />
         <Route path="/create-poll" element={<CreatePoll />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>

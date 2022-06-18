@@ -1,14 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import PollAnswer from "../components/PollAnswer";
-import PollHero from "../components/PollHero";
+import PollQuestion from "../components/PollQuestion";
 
 const PollPage = () => {
   return (
     <div className="header">
       <Navbar />
-      <PollHero />
-      <PollAnswer />
+      <PollQuestion />
     </div>
   );
 };
