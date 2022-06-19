@@ -1,8 +1,19 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getAuthedUserId, hasTakenPoll } from "../selectors/user";
+import { answerQuestion } from "../features/questions";
+import { QUESTION_ANSWER_TYPE } from "../utils/enums";
+import { useParams } from "react-router-dom";
+import { getPollCounts } from "../selectors/questions";
+
 
 const PollQuestion = () => {
+  const dispatch = useDispatch()
+  const {id} = useParams()
   const questions = useSelector((state) => state.questions.questions);
+  const user = useSelector(getAuthedUserId)
+  const takenPoll = useSelector(hasTakenPoll(id))
+  const {optionOne: optionOneVotes, optionTwo: optionTwoVotes} = useSelector(getPollCounts(id))
 
   //get relevant question data
   const questionData = Object.keys(questions).map((question) => {
@@ -42,13 +53,10 @@ const PollQuestion = () => {
     return optionTwoText.charAt(0).toUpperCase() + optionTwoText.slice(1);
   });
 
-  //map over the question object to display the votes
-  const optionOneVotes = Object.keys(question).map((question) => {
-    return questionData[question].optionOneVotes.votes;
-  });
-  const optionTwoVotes = Object.keys(question).map((question) => {
-    return questionData[question].optionTwoVotes.votes;
-  });
+  const submitAnswer = (optionType) => {
+    dispatch(answerQuestion({optionType, user, id}))
+
+  }
 
   return (
     <div className="container">
@@ -59,11 +67,20 @@ const PollQuestion = () => {
         <div className="poll-answer-container">
           <div className="poll-answer">
             <div className="poll-title">{optionOneTextCapitalized}</div>
-            <button className="poll-answer-btn">Vote for This!</button>
+            {takenPoll ? <div className="poll-title">{optionOneVotes} </div> :
+              <button className="poll-answer-btn" onClick={() => {
+                submitAnswer(QUESTION_ANSWER_TYPE.OPTION_ONE)
+              }}>Vote for This!
+              </button>}
           </div>
           <div className="poll-answer">
             <div className="poll-title">{optionTwoTextCapitalized}</div>
-            <button className="poll-answer-btn">Vote for This!</button>
+            {takenPoll ? <div className="poll-title">{optionTwoVotes} </div> :
+              <button className="poll-answer-btn" onClick={() => {
+                submitAnswer(QUESTION_ANSWER_TYPE.Option_TWO)
+              }}>Vote for This!
+              </button>}
+
           </div>
         </div>
       </div>

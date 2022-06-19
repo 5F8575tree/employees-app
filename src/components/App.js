@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginPage from "../views/LoginPage";
 import Dashboard from "../views/Dashboard";
 import PollPage from "../views/PollPage";
@@ -7,6 +7,7 @@ import CreatePoll from "../views/CreatePoll";
 import Leaderboard from "../views/Leaderboard";
 import "../styles/index.css";
 import { useDispatch } from "react-redux";
+import { ROUTES } from "../utils/enums";
 import { getInitialData } from "../utils/api";
 import { receiveUsers } from "../features/users";
 import { receiveQuestions } from "../features/questions";
@@ -33,11 +34,11 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" exact element={<LoginPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/questions/:id" element={<PollPage />} />
-        <Route path="/add" element={<CreatePoll />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/" exact element={<LoginPage/>}/>
+        <Route path={ROUTES.DASHBOARD} element={<Dashboard/>}/>
+        <Route path="/questions/:id" element={<PollPage/>}/>
+        <Route path="/add" element={<CreatePoll/>}/>
+        <Route path="/leaderboard" element={<Leaderboard/>}/>
       </Routes>
     </BrowserRouter>
   );

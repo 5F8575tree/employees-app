@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { formatQuestion } from "../utils/_DATA";
 
 export const initialState = {
   questions: {},
@@ -11,19 +12,17 @@ const questionSlice = createSlice({
     receiveQuestions: (state, action) => {
       state.questions = action.payload;
     },
-    addQuestion: (state, action) => {
-      state.questions[action.payload.id] = action.payload;
+    answerQuestion: (state, {payload}) => {
+      const {optionType, user, id} = payload
+      state.questions[id][optionType].votes.push(user)
     },
-    answerQuestion: (state, action) => {
-      state.questions[action.payload.id] = {
-        ...state.questions[action.payload.id],
-        [action.payload.answer]: {
-          ...state.questions[action.payload.id][action.payload.answer],
-          votes: state.questions[action.payload.id][
-            action.payload.answer
-          ].votes.concat([action.payload.authedUser]),
-        },
-      };
+    addQuestion: {
+      reducer: (state, {payload}) => {
+        state.questions[payload.id] = payload
+      },
+      prepare: ({optionOne: optionOneText, optionTwo: optionTwoText, author, id}) => {
+        return {payload: {...formatQuestion({optionOneText, optionTwoText, author, id})}}
+      },
     },
   },
 });
