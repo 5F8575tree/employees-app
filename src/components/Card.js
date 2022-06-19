@@ -1,10 +1,12 @@
 import React from "react";
 import { formatDate } from "../utils/helpers";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ image, date, author, id }) => {
+  const navigate = useNavigate()
   //when the button is clicked send the user to the question page with the corresponding id
   const handleClick = () => {
-    window.location.href = `/questions/${id}`;
+    navigate(`/questions/${id}`)
   };
 
   return (
