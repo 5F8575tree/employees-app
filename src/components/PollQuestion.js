@@ -1,16 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { answerQuestion } from "../features/questions";
 
 const PollQuestion = () => {
   const questions = useSelector((state) => state.questions.questions);
 
-  //return the objects from the question with the id that matches the url
+  //get relevant question data
   const questionData = Object.keys(questions).map((question) => {
     return {
       id: questions[question].id,
       optionOneText: questions[question].optionOne.text,
       optionTwoText: questions[question].optionTwo.text,
+      optionOneVotes: questions[question].optionOne,
+      optionTwoVotes: questions[question].optionTwo,
     };
   });
 
@@ -20,33 +21,34 @@ const PollQuestion = () => {
       return questionData[question];
     }
   });
-  console.log(question);
 
   const removeUndefined = Object.keys(question).forEach((k) =>
     question[k] === undefined ? delete question[k] : {}
   );
 
-  //map over the question object to display the optionOne text
+  //map over the question object to display the options text
   const optionOneText = Object.keys(question).map((question) => {
     return questionData[question].optionOneText;
   });
-
-  //map over the question object to display the optionTwo text
   const optionTwoText = Object.keys(question).map((question) => {
     return questionData[question].optionTwoText;
   });
 
-  //capitalize the first letter of the optionOne text
+  //capitalize the first letter of the text
   const optionOneTextCapitalized = optionOneText.map((optionOneText) => {
     return optionOneText.charAt(0).toUpperCase() + optionOneText.slice(1);
   });
-
-  //capitalize the first letter of the optionTwo text
   const optionTwoTextCapitalized = optionTwoText.map((optionTwoText) => {
     return optionTwoText.charAt(0).toUpperCase() + optionTwoText.slice(1);
   });
 
-  //TODO: Figure out how to implement the answerQuestion function
+  //map over the question object to display the votes
+  const optionOneVotes = Object.keys(question).map((question) => {
+    return questionData[question].optionOneVotes.votes;
+  });
+  const optionTwoVotes = Object.keys(question).map((question) => {
+    return questionData[question].optionTwoVotes.votes;
+  });
 
   return (
     <div className="container">
