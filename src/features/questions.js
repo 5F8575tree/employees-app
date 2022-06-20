@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { formatQuestion } from "../utils/_DATA";
+import { formatQuestion, QuestionState } from "../utils/_DATA";
 
 export const initialState = {
-  questions: {},
+  questions: QuestionState,
 };
 
 const questionSlice = createSlice({

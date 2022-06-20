@@ -8,6 +8,5 @@ export const getAuthedUserData = createSelector(getUsers, getAuthedUserId, (user
 })
 
 export const hasTakenPoll = (pollId) => createSelector(getAuthedUserData, (userInfo) => {
-  console.log(userInfo)
   return userInfo?.answers[pollId] !== undefined
 })

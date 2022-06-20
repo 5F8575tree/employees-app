@@ -26,6 +26,7 @@ const Polls = () => {
                   />
                 );
               }
+              return null
             })}
           </div>
         </ul>
@@ -47,6 +48,7 @@ const Polls = () => {
                   />
                 );
               }
+              return null;
             })}
           </div>
         </ul>

@@ -6,6 +6,7 @@ import userReducer from "../features/users";
 import authedUserReducer from "../features/authedUser";
 import questionReducer from "../features/questions";
 import logger from "redux-logger";
+import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from "redux-persist/es/constants";
 
 
 const persistConfig = {
@@ -22,7 +23,12 @@ const reducer = persistReducer(persistConfig, combineReducers({
 
 export const store = configureStore({
   reducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat(logger),
 });
 
 export const persistor = persistStore(store)

@@ -52,13 +52,13 @@ const LoginForm = () => {
                 <div className="pass">Forgot Password?</div>
                 <input type="submit" value="Login"></input>
                 <div className="signup_link">
-                  Not a member? <a href="#">Signup</a>
+                  Not a member? <a href="/">Signup</a>
                 </div>
                 <div className="copy_legal">
                   <p>
                     <span className="small">
-                      Copyright 2022 | View our <a href="#">Privacy Policy</a>{" "}
-                      &amp; <a href="#">Terms and Conditions</a>
+                      Copyright 2022 | View our <a href="/">Privacy Policy</a>{" "}
+                      &amp; <a href="/">Terms and Conditions</a>
                     </span>
                   </p>
                 </div>

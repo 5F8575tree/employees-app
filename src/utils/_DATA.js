@@ -222,3 +222,6 @@ export function _saveQuestionAnswer({ authedUser, qid, answer }) {
     }, 500);
   });
 }
+
+export const QuestionState = questions;
+export const UserState = users;

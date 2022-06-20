@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <nav>
-        <img src={logo} />
+        <img src={logo} alt="logo" />
         <ul className="navbar-items">
           <li>
             <Link to="/dashboard">
@@ -51,23 +51,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-{
-  /* <div className="nav-right">
-<ul className="navbar-items">
-  <li className="nav-item-right">
-    <img
-      className="nav-avatar"
-      alt="user avatar"
-      //show only the avatar of the autherUser (basically easy way to connect user data to the authedUser data)
-      src={users[authedUser]?.avatarURL}
-    />
-  </li>
-  <li className="nav-item-right">
-    <Link to="/">
-      <button className="logout-btn">Logout</button>
-    </Link>
-  </li>
-</ul>
-</div> */
-}

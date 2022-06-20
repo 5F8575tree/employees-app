@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { addQuestion, answerQuestion } from "../features/questions";
+import { UserState } from "../utils/_DATA";
 
 export const initialState = {
-  users: [],
+  users: UserState,
 };
 
 const userSlice = createSlice({
