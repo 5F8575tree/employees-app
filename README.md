@@ -12,6 +12,7 @@
   - [Poll Page](#poll-page)
   - [Leaderboard Page](#leaderboard-page)
   - [Create a Poll Page](#create-a-poll-page)
+  - [Responsive Design](#responsive-design)
 - [File Tree](#file-tree)
 - [Create React App](#create-react-app)
 - [License](#license)
@@ -55,6 +56,11 @@ The leaderboard shows the calculation of the combination of the current user's a
 
 The user can create a poll question by clicking on the "Create a Poll" button. The user is presented with the input fields to create a question, and the question then immediately becomes available to be answered from the home page (dashboard).
 ![Create a Poll Page](images/screenshot6.jpg)
+
+## Responsive Design
+
+The app is responsive and works on mobile, tablet, and desktop.
+![Responsive Design](images/screenshot7.jpg)
 
 # File Tree
 
