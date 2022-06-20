@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# Employees App using React and Redux-Toolkit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Table of Contents
 
-## Available Scripts
+- [Employees App using React and Redux-Toolkit](#employees-app-using-react-and-redux-toolkit)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Screenshots](#screenshots)
+  - [Login Page](#login-page)
+  - [Home Page](#home-page)
+  - [Poll Page](#poll-page)
+  - [Leaderboard Page](#leaderboard-page)
+  - [Create a Poll Page](#create-a-poll-page)
+- [File Tree](#file-tree)
+- [Create React App](#create-react-app)
+- [License](#license)
 
-In the project directory, you can run:
+# Introduction
 
-### `npm start`
+This app allows for an "employee" to answer, view, and create poll questions that are phrased in a "would you rather?" format. The app is built using React and Redux-Toolkit, and the state is made to persist with the aid of Redux-Persist. The app also includes a log in feature, as well as displaying the currents "results" of the polls after the user has answered them.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    npm install
 
-### `npm test`
+    npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Screenshots
 
-### `npm run build`
+## Login Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The user is first greeted by the login page (\*note: the sign up, privacy policy, and terms & conditions links are not implemented).
+![Login Page](images/screenshot1.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Upon selecting the input field, the UI interface changes to allow the user to enter their username and password.
+![Login Page](images/screenshot2.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Home Page
 
-### `npm run eject`
+The user, upon logging in, is greeted with the home page. This page acts as a dashboard, and presents the user first with the questions that they have not yet answered, and then with the questions that they have answered.
+![Home Page](images/screenshot3.jpg)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Poll Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+When the user clicks on a poll question that they have not yet answered, the user is presented with the options for that poll. After making a selection, the user state is updated so that the question is marked as answered, and the UI also shows the current results of the poll.
+![Poll Page](images/screenshot4.jpg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Leaderboard Page
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The leaderboard shows the calculation of the combination of the current user's answers given and questions created.
+![Leaderboard Page](images/screenshot5.jpg)
 
-## Learn More
+## Create a Poll Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The user can create a poll question by clicking on the "Create a Poll" button. The user is presented with the input fields to create a question, and the question then immediately becomes available to be answered from the home page (dashboard).
+![Create a Poll Page](images/screenshot6.jpg)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# File Tree
 
-### Code Splitting
+    ├── README.md #This file.
+    ├── package.json #npm package manager file.
+    ├── public
+    └── src
+        ├── test
+        │ ├── App.test.js
+        │ └── setupTests.js
+        │
+        ├── app
+        │ └── store.js
+        │
+        ├── assets
+        │ └── ktg2-final2arctic.png
+        │
+        ├── components
+        │ ├── Add.js
+        │ ├── App.js
+        │ ├── Card.js
+        │ ├── CompletedCard.js
+        │ ├── Hero.js
+        │ ├── Leaderboard.js
+        │ ├── LoginForm.js
+        │ ├── Navbar.js
+        │ ├── PollQuestion.js
+        │ └── Polls.js
+        │
+        ├── features
+        │ ├── authedUser.js
+        │ ├── questions.js
+        │ └── users.js
+        │
+        ├── selectors
+        │ ├── questions.js
+        │ └── users.js
+        │
+        ├── styles
+        │ └── index.css
+        │
+        ├── utils
+        │ ├── DATA.js
+        │ ├── api.js
+        │ ├── enums.js
+        │ ├── helpers.js
+        │ └── validators.js
+        │
+        ├── views
+        │ ├── CreatePoll.js
+        │ ├── Dashboard.js
+        │ ├── Leaderboard.js
+        │ ├── LoginPage.js
+        │ └── PollPage.js
+        │
+        └── index.js # Used for DOM rendering only.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Create React App
 
-### Analyzing the Bundle Size
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can find information about the bootstrapping process [here](https://reactjs.org/docs/create-a-new-react-app.html).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT license.
