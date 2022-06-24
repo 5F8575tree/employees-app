@@ -52,3 +52,5 @@ const LeaderboardComp = (props) => {
 };
 
 export default LeaderboardComp;
+
+module.exports = ranking;

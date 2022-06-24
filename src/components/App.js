@@ -7,17 +7,18 @@ import CreatePoll from "../views/CreatePoll";
 import Leaderboard from "../views/Leaderboard";
 import "../styles/index.css";
 import { ROUTES } from "../utils/enums";
+import Todo from "../views/Todo";
 
 const App = () => {
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" exact element={<LoginPage/>}/>
-        <Route path={ROUTES.DASHBOARD} element={<Dashboard/>}/>
-        <Route path="/questions/:id" element={<PollPage/>}/>
-        <Route path="/add" element={<CreatePoll/>}/>
-        <Route path="/leaderboard" element={<Leaderboard/>}/>
+        <Route path="/" exact element={<LoginPage />} />
+        <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+        <Route path="/questions/:id" element={<PollPage />} />
+        <Route path="/add" element={<CreatePoll />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Todo />
       </Routes>
     </BrowserRouter>
   );
