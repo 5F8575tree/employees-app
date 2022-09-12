@@ -6,19 +6,26 @@ export const initialState = {
   users: UserState,
 };
 
+
+
 const userSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
     receiveUsers: (state, action) => {
       state.users = action.payload;
-    }
+    },
+
+    add_current_user: (state, action) => {
+      console.log(action.payload)
+    },
+
   },
   extraReducers: {
-    [addQuestion]: (state, {payload: {id, author}}) => {
+    [addQuestion]: (state, { payload: { id, author } }) => {
       state.users[author].questions.push(id)
     },
-    [answerQuestion]: (state, {payload: {id, user, optionType}}) => {
+    [answerQuestion]: (state, { payload: { id, user, optionType } }) => {
       state.users[user].answers[id] = optionType
     }
   },

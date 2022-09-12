@@ -13,16 +13,33 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(userName, password, userList);
-    //if input matches a user in the userList and password matches the password in the userList, set the authedUser to the user's id
-    if (userList[userName].password === password) {
+
+    const correct_login = () => {
+      console.log("login successfull")
       dispatch(setAuthedUser(userName));
+
       localStorage.setItem("authedUser", userName);
       navigate("/Dashboard");
     }
+
+    const usernames = Object.values(userList)
+    usernames.map(v => v.id === userName ? v.password === password ? correct_login() : console.log("wrong password") : null)
+
+    // If input matches a user in the userList and password matches the password in the userList, set the authedUser to the user's id
+    // if (userList.userName.password === password) {
+    //   dispatch(setAuthedUser(userName));
+
+    //   localStorage.setItem("authedUser", userName);
+    //   navigate("/Dashboard");
+    // }
+    // else { console.log("wrong credentials") }
   };
+
+  // console.log(userList.mtsamis.password)
 
   return (
     <div className="split_screen">
+      { }
       <div className="right">
         <section className="copy">
           <div className="center">
@@ -34,7 +51,6 @@ const LoginForm = () => {
                     type="text"
                     required
                     value={userName}
-                    data-testid="username"
                     onChange={(e) => setUserName(e.target.value)}
                   ></input>
                   <span></span>
@@ -51,7 +67,7 @@ const LoginForm = () => {
                   <label>Password</label>
                 </div>
                 <div className="pass">Forgot Password?</div>
-                <input type="submit" value="Login" data-testid="login"></input>
+                <input type="submit" value="Login"></input>
                 <div className="signup_link">
                   Not a member? <a href="/">Signup</a>
                 </div>

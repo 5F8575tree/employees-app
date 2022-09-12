@@ -38,7 +38,6 @@ const PollQuestion = () => {
             ) : (
               <button
                 className="poll-answer-btn"
-                data-testid="poll-answer-btn"
                 onClick={() => {
                   submitAnswer(QUESTION_ANSWER_TYPE.OPTION_ONE);
                 }}

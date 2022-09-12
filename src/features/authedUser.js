@@ -12,7 +12,7 @@ const userSlice = createSlice({
       state.authedUser = action.payload;
     },
     removeAuthedUser: (state, action) => {
-      state.authedUser = null; //logoutSuccess
+      state.authedUser = null; //logoutSuccess  
     },
   },
 });

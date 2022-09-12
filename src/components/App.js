@@ -10,14 +10,17 @@ import { ROUTES } from "../utils/enums";
 
 const App = () => {
 
+
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" exact element={<LoginPage/>}/>
-        <Route path={ROUTES.DASHBOARD} element={<Dashboard/>}/>
-        <Route path="/questions/:id" element={<PollPage/>}/>
-        <Route path="/add" element={<CreatePoll/>}/>
-        <Route path="/leaderboard" element={<Leaderboard/>}/>
+        <Route path="/" exact element={<LoginPage />} />
+
+        <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+        <Route path="/questions/:id" element={<PollPage />} />
+        <Route path="/add" element={<CreatePoll />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,15 +1,22 @@
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import logo from "../assets/ktg2-final2arctic.png";
+import {removeAuthedUser} from "../features/authedUser"
+
+
 
 const Navbar = () => {
+
+  const dispatch = useDispatch()
   const authedUser = useSelector((state) => state.authedUser.authedUser);
   const users = useSelector((state) => state.users.users);
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("authedUser");
     navigate("/");
+    dispatch(removeAuthedUser())
+    
   };
 
   return (

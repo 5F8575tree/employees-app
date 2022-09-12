@@ -14,10 +14,11 @@ const Add = () => {
   const author = useSelector(getAuthedUserId)
   return <Form
     onSubmit={(values) => {
-      dispatch(addQuestion({...values, author, id: generateUID()}))
+      dispatch(addQuestion({ ...values, author, id: generateUID() }))
       navigate(-1)
     }}
-    render={({handleSubmit}) => {
+    
+    render={({ handleSubmit }) => {
       return (
         <div className="container">
           <h2 className="create-poll-title">Create a Poll</h2>
