@@ -1,3 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders poll question snapshot 1`] = `<DocumentFragment />`;
+exports[`LoginForm renders the LoginForm component snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="split_screen"
+  >
+    <div
+      class="right"
+    >
+      <section
+        class="copy"
+      >
+        <div
+          class="center"
+        >
+          <div
+            class="login-form"
+          >
+            <h1
+              data-testid="heading"
+            >
+              Login
+            </h1>
+            <form
+              method="post"
+            >
+              <div
+                class="txt_field"
+              >
+                <input
+                  id="usernameField"
+                  required=""
+                  type="text"
+                  value=""
+                />
+                <span />
+                <label
+                  for="usernameField"
+                >
+                  Username
+                </label>
+              </div>
+              <div
+                class="txt_field"
+              >
+                <input
+                  id="passwordField"
+                  required=""
+                  type="password"
+                  value=""
+                />
+                <span />
+                <label
+                  for="passwordField"
+                >
+                  Password
+                </label>
+              </div>
+              <div
+                class="pass"
+              >
+                Forgot Password?
+              </div>
+              <input
+                data-testid="submitButton"
+                type="submit"
+                value="Login"
+              />
+              <div
+                class="signup_link"
+                data-testid="signupLink"
+              >
+                Not a member? 
+                <a
+                  href="/"
+                >
+                  Signup
+                </a>
+              </div>
+              <div
+                class="copy_legal"
+              >
+                <p>
+                  <span
+                    class="small"
+                    data-testid="copyrightNotice"
+                  >
+                    Copyright 2022 | View our 
+                    <a
+                      href="/"
+                    >
+                      Privacy Policy
+                    </a>
+                     & 
+                    <a
+                      href="/"
+                    >
+                      Terms and Conditions
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</DocumentFragment>
+`;

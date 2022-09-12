@@ -12,7 +12,6 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(userName, password, userList);
 
     const correct_login = () => {
       console.log("login successfull")
@@ -44,36 +43,38 @@ const LoginForm = () => {
         <section className="copy">
           <div className="center">
             <div className="login-form">
-              <h1>Login</h1>
+              <h1 data-testid="heading">Login</h1>
               <form method="post" onSubmit={handleSubmit}>
                 <div className="txt_field">
                   <input
+                    id="usernameField"
                     type="text"
                     required
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
                   ></input>
                   <span></span>
-                  <label>Username</label>
+                  <label htmlFor="usernameField">Username</label>
                 </div>
                 <div className="txt_field">
                   <input
+                    id="passwordField"
                     type="password"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   ></input>
                   <span></span>
-                  <label>Password</label>
+                  <label htmlFor="passwordField">Password</label>
                 </div>
                 <div className="pass">Forgot Password?</div>
-                <input type="submit" value="Login"></input>
-                <div className="signup_link">
+                <input type="submit" value="Login" data-testid="submitButton"></input>
+                <div className="signup_link" data-testid="signupLink">
                   Not a member? <a href="/">Signup</a>
                 </div>
                 <div className="copy_legal">
                   <p>
-                    <span className="small">
+                    <span className="small" data-testid="copyrightNotice">
                       Copyright 2022 | View our <a href="/">Privacy Policy</a>{" "}
                       &amp; <a href="/">Terms and Conditions</a>
                     </span>
