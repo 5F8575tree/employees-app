@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders hero link snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="split_screen"
+  >
+    <div
+      class="left"
+    >
+      <section
+        class="copy"
+      >
+        <h1>
+          Employees Poll
+        </h1>
+        <img
+          alt="company_logo"
+          src="ktg2-final2arctic.png"
+        />
+        <p>
+          Here's your chance to have 
+          <strong>
+            your
+          </strong>
+           say on how we work together
+        </p>
+      </section>
+    </div>
+  </div>
+</DocumentFragment>
+`;

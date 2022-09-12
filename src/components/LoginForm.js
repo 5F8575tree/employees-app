@@ -34,6 +34,7 @@ const LoginForm = () => {
                     type="text"
                     required
                     value={userName}
+                    data-testid="username"
                     onChange={(e) => setUserName(e.target.value)}
                   ></input>
                   <span></span>
@@ -50,7 +51,7 @@ const LoginForm = () => {
                   <label>Password</label>
                 </div>
                 <div className="pass">Forgot Password?</div>
-                <input type="submit" value="Login"></input>
+                <input type="submit" value="Login" data-testid="login"></input>
                 <div className="signup_link">
                   Not a member? <a href="/">Signup</a>
                 </div>
