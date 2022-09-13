@@ -7,8 +7,6 @@ const Polls = () => {
   const authedUser = useSelector((state) => state.authedUser.authedUser);
   const users = useSelector((state) => state.users.users);
 
-  // Two buttons, one for hiding answered and one for hiding unanswered
-  // When answered is clicked, hide unanswered and vice versa
   const switchViews = (e) => {
     const answered = document.getElementsByClassName("answered-poll-list");
     const unanswered = document.getElementsByClassName("new-poll-list");
@@ -19,7 +17,15 @@ const Polls = () => {
       for (let i = 0; i < unanswered.length; i++) {
         unanswered[i].style.display = "none";
       }
+    } else if (e.target.id === "unanswered") {
+      for (let i = 0; i < answered.length; i++) {
+        answered[i].style.display = "none";
+      }
+      for (let i = 0; i < unanswered.length; i++) {
+        unanswered[i].style.display = "block";
+      }
     } else {
+      // default view is unanswered
       for (let i = 0; i < answered.length; i++) {
         answered[i].style.display = "none";
       }
@@ -39,8 +45,8 @@ const Polls = () => {
         <h2 className="polls-header">New Questions</h2>
         <ul className="new-poll-list">
           <div className="card-container">
-            {/* TODO: Filter the questions object with the condition and then map over it to avoid not returning a value */}
-            {Object.keys(questions).map((question) => {
+            {/* order by timestamp */}
+            {Object.keys(questions).sort((a, b) => questions[b].timestamp - questions[a].timestamp).map((question) => {
               if (!users[authedUser]?.answers[question]) {
                 return (
                   <Card
@@ -61,8 +67,7 @@ const Polls = () => {
         <h2 className="polls-header">Answered Questions</h2>
         <ul className="answered-poll-list">
           <div className="card-container">
-            {/* TODO: Filter the questions object with the condition and then map over it to avoid not returning a value */}
-            {Object.keys(questions).map((question) => {
+            {Object.keys(questions).sort((a, b) => questions[b].timestamp - questions[a].timestamp).map((question) => {
               if (users[authedUser]?.answers[question]) {
                 return (
                   <Card

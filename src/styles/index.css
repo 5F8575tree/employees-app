@@ -370,6 +370,16 @@ nav .nav-link {
   cursor: pointer;
 }
 
+#all {
+  background-color: #2691d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
 #dashboard {
   background: #f8f8ff;
 }
