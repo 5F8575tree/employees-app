@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Card = ({ image, date, author, id }) => {
   const navigate = useNavigate()
-  //when the button is clicked send the user to the question page with the corresponding id
+
   const handleClick = () => {
     navigate(`/questions/${id}`)
   };

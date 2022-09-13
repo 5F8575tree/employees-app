@@ -16,9 +16,11 @@ const PollQuestion = () => {
     getPollCounts(id)
   );
 
-  //map over the question object to display the options text
   const optionOneText = question?.optionOne?.text;
   const optionTwoText = question?.optionTwo?.text;
+
+  const author = question?.author;
+  const avatarURL = useSelector((state) => state.users.users[author].avatarURL);
 
   const submitAnswer = (optionType) => {
     dispatch(answerQuestion({ optionType, user, id }));
@@ -27,6 +29,7 @@ const PollQuestion = () => {
   return (
     <div className="container">
       <div className="poll-container">
+        <img src={avatarURL} alt="user-avatar" className="author-avatar" />
         <div className="poll-question">
           <h2>Would you rather?</h2>
         </div>

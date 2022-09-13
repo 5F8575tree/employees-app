@@ -3,9 +3,7 @@ import { useSelector } from "react-redux";
 
 const LeaderboardComp = (props) => {
   const users = useSelector((state) => state.users.users);
-  console.log(users);
 
-  //we need a function to get the number of answers from the users object and push this to update the state
   const ranking = Object.keys(users).map((user) => {
     return {
       name: users[user].name,
@@ -15,7 +13,6 @@ const LeaderboardComp = (props) => {
     };
   });
 
-  //we need to sort the ranking array by the number of answers and questions combined
   ranking.sort((a, b) => {
     return b.answers + b.questions - (a.answers + a.questions);
   });
