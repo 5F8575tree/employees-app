@@ -31,6 +31,10 @@ const PollQuestion = () => {
     return Math.round((votes / totalVotes) * 100);
   };
 
+  const votedByUser = (optionType) => {
+    return question[optionType].votes.includes(user);
+  };
+
   return (
     <div className="container">
       <div className="poll-container">
@@ -38,13 +42,24 @@ const PollQuestion = () => {
         <div className="poll-question">
           <h2>Would you rather?</h2>
         </div>
+        <p className="voted-for">The option you voted for is shown in green</p>
         <div className="poll-answer-container">
           <div className="poll-answer">
             <div className="poll-title">{optionOneText}</div>
             {takenPoll ? (
               <div className="poll-results">
+                <div
+                  className="poll-results-bar"
+                  style={{
+                    width: `${votePercentage(optionOneVotes)}%`,
+                    backgroundColor: votedByUser("optionOne")
+                      ? "green"
+                      : "lightpink",
+                  }}
+                >
+                  {votePercentage(optionOneVotes)}%
+                </div>
                 <div className="poll-votes">Votes: {optionOneVotes} </div>
-                <div className="vote-percentage"> {votePercentage(optionOneVotes)}% </div>
               </div>
             ) : (
               <button
@@ -61,8 +76,18 @@ const PollQuestion = () => {
             <div className="poll-title">{optionTwoText}</div>
             {takenPoll ? (
               <div className="poll-results">
+                <div
+                  className="poll-results-bar"
+                  style={{
+                    width: `${votePercentage(optionTwoVotes)}%`,
+                    backgroundColor: votedByUser("optionTwo")
+                      ? "lightgreen"
+                      : "lightpink",
+                  }}
+                >
+                  {votePercentage(optionTwoVotes)}%
+                </div>
                 <div className="poll-votes">Votes: {optionTwoVotes} </div>
-                <div className="vote-percentage"> {votePercentage(optionTwoVotes)}% </div>
               </div>
             ) : (
               <button

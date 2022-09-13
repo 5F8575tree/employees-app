@@ -45,7 +45,6 @@ const Polls = () => {
         <h2 className="polls-header">New Questions</h2>
         <ul className="new-poll-list">
           <div className="card-container">
-            {/* order by timestamp */}
             {Object.keys(questions).sort((a, b) => questions[b].timestamp - questions[a].timestamp).map((question) => {
               if (!users[authedUser]?.answers[question]) {
                 return (
