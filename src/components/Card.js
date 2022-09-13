@@ -5,9 +5,14 @@ import { useNavigate } from "react-router-dom";
 const Card = ({ image, date, author, id }) => {
   const navigate = useNavigate()
 
+  // TODO: we need the question id to pass it to questions/:id, or 404 if it doesn't exist
   const handleClick = () => {
-    navigate(`/questions/${id}`)
-  };
+    if (id) {
+      navigate(`/questions/${id}`)
+    } else {
+      navigate("/404")
+    }
+  }
 
   return (
     <div className="card">

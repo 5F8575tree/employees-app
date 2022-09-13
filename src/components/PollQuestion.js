@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAuthedUserId, hasTakenPoll } from "../selectors/user";
 import { answerQuestion } from "../features/questions";
 import { QUESTION_ANSWER_TYPE } from "../utils/enums";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { getPollCounts, getQuestionById } from "../selectors/questions";
 
 const PollQuestion = () => {
@@ -24,6 +24,7 @@ const PollQuestion = () => {
 
   const submitAnswer = (optionType) => {
     dispatch(answerQuestion({ optionType, user, id }));
+    Navigate('/dashboard');
   };
 
   const votePercentage = (votes) => {

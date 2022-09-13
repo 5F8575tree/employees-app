@@ -605,7 +605,7 @@ button {
   align-items: center;
   width: 50vw;
   max-width: 50vw;
-  height: 25vh;
+  min-height: 35vh;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   background: #fff;
@@ -613,12 +613,12 @@ button {
 }
 
 .author-avatar {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  margin: 0;
   padding: 0;
+  margin-top: 40px;
   display: block;
 }
 
