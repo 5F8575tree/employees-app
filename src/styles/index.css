@@ -75,7 +75,6 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  background: whitesmoke;
   border-radius: 10px;
 }
 
@@ -339,6 +338,38 @@ nav .nav-link {
 }
 
 /* Dashboard Page */
+.switch-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 80px;
+  background: #f8f8ff;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+#answered {
+  background-color: #2691d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#unanswered {
+  background-color: #2691d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
 #dashboard {
   background: #f8f8ff;
 }

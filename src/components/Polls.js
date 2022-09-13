@@ -7,8 +7,34 @@ const Polls = () => {
   const authedUser = useSelector((state) => state.authedUser.authedUser);
   const users = useSelector((state) => state.users.users);
 
+  // Two buttons, one for hiding answered and one for hiding unanswered
+  // When answered is clicked, hide unanswered and vice versa
+  const switchViews = (e) => {
+    const answered = document.getElementsByClassName("answered-poll-list");
+    const unanswered = document.getElementsByClassName("new-poll-list");
+    if (e.target.id === "answered") {
+      for (let i = 0; i < answered.length; i++) {
+        answered[i].style.display = "block";
+      }
+      for (let i = 0; i < unanswered.length; i++) {
+        unanswered[i].style.display = "none";
+      }
+    } else {
+      for (let i = 0; i < answered.length; i++) {
+        answered[i].style.display = "none";
+      }
+      for (let i = 0; i < unanswered.length; i++) {
+        unanswered[i].style.display = "block";
+      }
+    }
+  };
+
   return (
     <div className="dashboard" id="dashboard">
+      <div className="switch-btns">
+        <button id="unanswered" onClick={switchViews}>View Unanswered</button>
+        <button id="answered" onClick={switchViews}>View Answered</button>
+      </div>
       <div className="new-polls">
         <h2 className="polls-header">New Questions</h2>
         <ul className="new-poll-list">
